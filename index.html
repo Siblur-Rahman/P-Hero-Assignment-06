@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 06</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="container w-5/6 m-auto mt-8">
+        <div class="navbar bg-base-100">
+            <div class="navbar-start">
+              <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                  <li><a class="tooltip rounded-full border-2 p-4 h-17 w-17" data-tip="Home"><i class="fa-solid fa-house"></i></a></li>
+                    <li><a class="tooltip rounded-full border-2 p-4 h-17 w-17" data-tip="Edit"><i class="fa-solid fa-pencil"></i></a></li>
+                    <li><a class="tooltip rounded-full border-2 p-4 h-17 w-17" data-tip="Add"><i class="fa-solid fa-user-plus"></i></a></li>
+                    <li><a class="tooltip rounded-full border-2 p-4 h-17 w-17" data-tip="Brand"><i class="fa-regular fa-flag"></i></a></li>
+                </ul>
+              </div>
+              <button><a class="text-3xl font-bold">F-Ahmad</a></button>
+            </div>
+
+            <div class="navbar-end">
+            <div class="navbar-center text-right hidden lg:flex">
+                <ul class="menu menu-horizontal px-1">
+                    <li><a class="tooltip rounded-full border-2 p-4 h-17 w-17" data-tip="Home"><i class="fa-solid fa-house"></i></a></li>
+                    <li><a class="tooltip rounded-full border-2 p-4 h-17 w-17" data-tip="Edit"><i class="fa-solid fa-pencil"></i></a></li>
+                    <li><a class="tooltip rounded-full border-2 p-4 h-17 w-17" data-tip="Add"><i class="fa-solid fa-user-plus"></i></a></li>
+                    <li><a class="tooltip rounded-full border-2 p-4 h-17 w-17" data-tip="Brand"><i class="fa-regular fa-flag"></i></a></li>
+                </ul>
+                </div>
+              <a class="btn bg-[#797DFC] rounded-3xl pr-10 pl-10">Sign in</a>
+            </div>
+          </div>
+          <!-- Banner section -->
+          <div class="bg-[url('./images/bgbanner.png')] bg-black p-5 lg:p-10 rounded-2xl">
+            <div class="hero-content flex-col lg:flex-row-reverse justify-between">
+              <div class="rounded-lg shadow-2xl w-full lg:w-1/4 bg-white p-4">
+                <div class="flex justify-between mt-5"><span>Registered User</span> 01</div>
+                <div class="flex justify-between mt-5"><span>Forum</span> <span>05</span></div>
+                <div class="flex justify-between mt-5"><span>Topics</span> <span>01</span></div>
+                <div class="flex justify-between mt-5">Replies<span></span> <span>01</span></div>
+              </div>
+              <div class="text-white w-full lg:w-2/4">
+                <h1 class="text-5xl font-bold">Welcome to the</h1>
+                <h1 class="text-5xl font-bold"><span class="text-slate-500">F-Ahmad</span> Forum</h1>
+                <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                <div class="flex text-black justify-between bg-white p-2 rounded-3xl">
+                  <input id="search-field" type="text" placeholder="Search here anything" class="w-3/4 outline-none" />
+                  <button id="search-btn" class="text-gray-50 bg-[#797DFC] w-1/4 rounded-3xl p-2">Search</button>
+                </div>
+              </div>
+            </div>
+          </div><!--End Banner section -->
+
+           <!--Start spinner section-->
+            <div class="text-center hidden" id="loading-spinner">
+              <span class="loading loading-bars loading-xs"></span>
+              <span class="loading loading-bars loading-sm"></span>
+              <span class="loading loading-bars loading-md"></span>
+              <span class="loading loading-bars loading-lg"></span>
+            </div>
+           <!--End spinner section-->
+
+          <!--Start Let’s Discuss section -->
+          <div class=" bg-base-200">
+            <div class="hero-content text-center">
+              <div class="max-w-md">
+                <h1 class="text-5xl font-bold">Let's Discuss</h1>
+                <p class="py-6">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
+              </div>
+            </div>
+            <div class="container mx-auto lg:flex gap-5">
+              <div id="all-post-card-container" class="lg:w-4/6">
+                
+                
+              </div>
+              <!--Start add to read box -->
+              <div class="lg:w-2/6">
+                  <div id="add-to-read-container" class=" rounded-2xl p-5 bg-slate-300">
+                    <div class="flex justify-between pb-3">
+                      <p class="card-title">Title</p>
+                      <p><i class="fa-solid fa-check-double text-green-600 mr-4"></i><span>Mark as read(<span id="mark-count">0</span>)</span></p>
+                    </div>
+
+                  </div>
+              </div><!--End add to read box -->
+          </div><!--End Let’s Discuss section -->
+          <!-- Register section -->
+          <div class="hero bg-[url('./images/bgbanner.png')] bg-black p-10 rounded-2xl mt-10">
+            <div class="hero-content flex-col lg:flex-row-reverse justify-between">
+              <div class="max-w-sm rounded-lg shadow-2xl w-2/4 p-4">
+                <img src="./images/joinforum.png" alt="">
+              
+              </div>
+              <div class="text-white w-2/4">
+                <h1 class="text-5xl font-bold"><spForum class="text-white">Join Our Forum</h1>
+                <p class="py-6">Share your favorite opinion and win and wp forum coffee mug! Yes, you can run unit tests and view the results directly within the app. </p>
+                  <button class="text-gray-50 bg-[#797DFC] rounded-3xl pt-2 pb-2 pl-4 pr-4 ">Registered Now</button>
+                
+              </div>
+            </div>
+          </div><!--End Hero section -->
+          <!--Start latest Post section -->
+          <div class=" bg-base-200">
+            <div class="hero-content text-center">
+              <div class="max-w-md">
+                <h1 class="text-5xl font-bold">Latest Posts</h1>
+                <p class="py-6">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
+              </div>
+            </div>
+
+            <div id="card-container" class="container mx-auto grid grid-cols-1 lg:grid-cols-3 lg:gap-2">
+              
+              
+            </div>
+       
+          </div><!--End latest Post section -->
+          <!--Start Footer Section -->
+          <footer class="footer footer-center bg-slate-200">
+            <aside>
+              <h1 class="text-5xl font-bold">
+                F-Ahmad
+              </h1> 
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe temporibus alias quam ipsa expedita est,aspernatur<br>  Commodi quae odio non quasi deleniti temporibus delectus vitae minus fugit.</p>
+            </aside> 
+            <nav>
+              <div class="grid grid-flow-col gap-4">
+                <a><i class="fa-brands fa-twitter"></i></a>
+                <a><i class="fa-brands fa-facebook"></i></a>
+                <a><i class="fa-brands fa-instagram"></i></a>
+                <a><i class="fa-brands fa-github"></i></a>
+              </div>
+            </nav>
+            <hr class="text-black w-full">
+            <p>Copyright © 2024 - All right reserved</p>
+          </footer>
+          <!--End Footer Section -->
+    </div><!----End Container-->
+    <!-- font awesome link -->
+    <script src="https://kit.fontawesome.com/09ff4c6b49.js" crossorigin="anonymous"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>
